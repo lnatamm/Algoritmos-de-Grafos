@@ -55,7 +55,7 @@ o valor é o peso (positivo) da aresta.
 >| 0 | 2 | 0 | 0 |
 
 # [3 - Prim](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Prim) 
-## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Prim/main.py) - Implementação do Bellman-Ford
+## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Prim/main.py) - Implementação do Prim
 >### Saída
 > Retorna "VERDADEIRO" e em um array 𝑃 𝑖 de 𝑁 elementos com os predecessores de cada vértice, caso o grafo seja
 conexo
