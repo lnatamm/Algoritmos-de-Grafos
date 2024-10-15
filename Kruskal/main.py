@@ -1,3 +1,5 @@
+import os
+
 #Remove o caractere de quebra de linha
 def removeLineBreak(variable):
     variable = variable.split()
