@@ -25,7 +25,7 @@ def readFile():
     r = removeLineBreak(r)
     return G, r
 
- #Inicializa os arrays d e 𝑃i
+#Inicializa os arrays d e 𝑃i
 def initializeSingleSource(G, s):
     n = len(G)
     #Dizemos que inicialmente a distância de cada vértice para a fonte é infinito
@@ -53,6 +53,7 @@ def relax(d, Pi, u, v, G):
         Pi[v] = u
     return d, Pi
 
+#Retorna o array das distâncias de cada vértice e a lista de predecessores do caminho mínimo de G partindo de s
 def bellmanFord(G, s):
     n = len(G)
     d, Pi = initializeSingleSource(G, s)
@@ -66,7 +67,6 @@ def bellmanFord(G, s):
                 if(G[u][v] > 0):
                     #Relaxamos cada aresta do grafo
                     d, Pi = relax(d, Pi, u, v, G)
-
     return d, Pi
 
 G, r = readFile()
