@@ -22,7 +22,9 @@ def readFile():
         for j in range(N):
             G[i].append(float(line[j]))
 
-    return G
+    r = file.readline()
+    r = removeLineBreak(r)
+    return G, r
 
 def dfsVisit(v, state, Pi, timeDiscovery, timeFinalization, time):
     #Altera o estado do vértice v para visitado
@@ -105,9 +107,9 @@ def prim(G, r):
                     keys[v] = G[u][v]
     return Pi
 
-G = readFile()
+G, r = readFile()
 if(isConected(G)):
     print("VERDADEIRO")
-    print(prim(G, 0))
+    print(prim(G, r))
 else:
     print("FALSO")
