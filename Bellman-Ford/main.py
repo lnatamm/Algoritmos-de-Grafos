@@ -71,7 +71,6 @@ def bellmanFord(G, s):
 
 G, r = readFile()
 d, Pi = bellmanFord(G, r)
-print(G)
 print("Pi:")
 print(Pi)
 print("d:")
