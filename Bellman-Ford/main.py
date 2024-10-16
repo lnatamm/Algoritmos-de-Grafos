@@ -39,8 +39,8 @@ def initializeSingleSource(G, s):
 #Método que permite a soma de 2 números funcione caso um deles seja infinito
 def sum(x, y):
     #Caso algum dos elementos da soma seja infinito, o resultado dessa soma é infinito
-    if(x == INFINIY or y == INFINITY):
-        return INFINIY
+    if(x == INFINITY or y == INFINITY):
+        return INFINITY
     return x + y
 
 #Relaxa a aresta, atualizando a distância do vértice v para a fonte e alterando seu predescessor caso encontre um mais curto
@@ -69,9 +69,10 @@ def bellmanFord(G, s):
                     d, Pi = relax(d, Pi, u, v, G)
     return d, Pi
 
-G, r = readFile()
-d, Pi = bellmanFord(G, r)
-print("Pi:")
-print(Pi)
-print("d:")
-print(d)
+print(os.getcwd() + "\\Bellman-Ford\\bf.txt")
+# G, r = readFile()
+# d, Pi = bellmanFord(G, r)
+# print("Pi:")
+# print(Pi)
+# print("d:")
+# print(d)
