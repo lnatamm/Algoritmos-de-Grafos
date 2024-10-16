@@ -9,7 +9,7 @@ def removeLineBreak(variable):
     return variable
 
 def readFile():
-    filePath = os.getcwd() + "\\bf.txt"
+    filePath = os.getcwd() + "\\Bellman-Ford\\bf.txt"
     file = open(filePath)
     N = file.readline()
     N = removeLineBreak(N)
@@ -19,7 +19,7 @@ def readFile():
         G.append([])
         line = file.readline().split()
         for j in range(N):
-            G[i].append(int(line[j]))
+            G[i].append(float(line[j]))
 
     r = file.readline()
     r = removeLineBreak(r)
@@ -69,10 +69,9 @@ def bellmanFord(G, s):
                     d, Pi = relax(d, Pi, u, v, G)
     return d, Pi
 
-print(os.getcwd() + "\\Bellman-Ford\\bf.txt")
-# G, r = readFile()
-# d, Pi = bellmanFord(G, r)
-# print("Pi:")
-# print(Pi)
-# print("d:")
-# print(d)
+G, r = readFile()
+d, Pi = bellmanFord(G, r)
+print("Pi:")
+print(Pi)
+print("d:")
+print(d)
