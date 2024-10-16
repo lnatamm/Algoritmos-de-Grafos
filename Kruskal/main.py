@@ -8,7 +8,7 @@ def removeLineBreak(variable):
 
 #Lê a matriz de adjacência do arquivo "kruskal.txt"
 def readFile():
-    filePath = os.getcwd() + "\\kruskal.txt"
+    filePath = os.getcwd() + "\\Kruskal\\kruskal.txt"
     file = open(filePath)
     N = file.readline()
     N = removeLineBreak(N)
@@ -18,7 +18,7 @@ def readFile():
         G.append([])
         line = file.readline().split()
         for j in range(N):
-            G[i].append(int(line[j]))
+            G[i].append(float(line[j]))
 
     return G
 
