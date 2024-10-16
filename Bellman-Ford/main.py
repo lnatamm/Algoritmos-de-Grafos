@@ -29,9 +29,9 @@ def readFile():
 def initializeSingleSource(G, s):
     n = len(G)
     #Dizemos que inicialmente a distância de cada vértice para a fonte é infinito
-    d[INFINITY]*n
+    d = [INFINITY]*n
     #Inicializamos os predecessores como -1
-    Pi[-1]*n
+    Pi = [-1]*n
     #A distância da fonte é 0
     d[s] = 0
     return d, Pi
@@ -71,6 +71,7 @@ def bellmanFord(G, s):
 
 G, r = readFile()
 d, Pi = bellmanFord(G, r)
+print(G)
 print("Pi:")
 print(Pi)
 print("d:")
