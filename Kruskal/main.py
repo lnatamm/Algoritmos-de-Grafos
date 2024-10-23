@@ -38,12 +38,13 @@ def dfsVisit(v, state, Pi, timeDiscovery, timeFinalization, time):
                 #Altera o predescessor do vértice para v
                 Pi[i] = v
                 #Agora visitamos o vértice i
-                dfsVisit(i, state, Pi, timeDiscovery, timeFinalization, time)
+                state, Pi, timeDiscovery, timeFinalization, time = dfsVisit(i, state, Pi, timeDiscovery, timeFinalization, time)
     #Após todos os vizinhos de v terem sido visitados, finalizamos o vértice v
     state[v] = 2
     time = time + 1
     #Define o tempo de finalização do vértice v como o tempo atual
     timeFinalization[v] = time
+    return state, Pi, timeDiscovery, timeFinalization, time
 
 #Realiza a busca em profundidade do vértice G e retorna os estados dos vértices
 def dfs(G):
@@ -62,7 +63,7 @@ def dfs(G):
     for v in range(n):
         #Se o vértice ainda não foi visitado, realizamos a visita dele
         if(state[v] == 0):
-            dfsVisit(v, state, Pi, timeDiscovery, timeFinalization, time)
+            state, Pi, timeDiscovery, timeFinalization, time = dfsVisit(v, state, Pi, timeDiscovery, timeFinalization, time)
     #Retornamos apenas o estado de cada vértice porque só estamos realizando o dfs para verificar se
     #o grafo G é conexo ou desconexo
     return state
