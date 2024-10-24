@@ -14,7 +14,7 @@ Implementação de diversos algoritmos pra grafos
 >
 > A matriz de adjacência, com elementos separados por espaços  
 >- A matriz de adjacência tem entradas 0 na linha 𝑖 e coluna 𝑗 se não há arestas entre os vértices 𝑖 e 𝑗. Caso contrário,
-o valor é o peso (positivo) da aresta.
+>o valor é o peso (positivo) da aresta.
 >
 > Exemplo:
 >
@@ -26,8 +26,38 @@ o valor é o peso (positivo) da aresta.
 >| 2.5 | 1.5 | 0 | 0 |
 >| 0 | 2 | 0 | 0 |
 >
+>0
+>
 >𝑟 - A fonte da árvore do algoritmo de Bellman-Ford
 
+# [2 - BFS (Breadth-First Search) ou Busca em Largura](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/BFS)
+## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/BFS/main.py) - Implementação do BFS
+>### Saída 
+>
+> 𝑃𝑖, um array de 𝑁 elementos com o predecessor de cada vértice
+>
+> 𝑑, um array de 𝑁 elementos com as distâncias de cada vértice à fonte 𝑟
+## [bfs.txt](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/BFS/bfs.txt) - Arquivo de entrada do algoritmo
+> ### Entrada
+> 𝑁 - O número de vértices, que são nomeados de 0 a 𝑁 − 1
+>
+> A matriz de adjacência, com elementos separados por espaços  
+>- A matriz de adjacência tem entradas 0 na linha 𝑖 e coluna 𝑗 se não há arestas entre os vértices 𝑖 e 𝑗. Caso contrário,
+>o valor é 1.
+>
+> Exemplo:
+>
+>| | | | |
+>|---|---|---|---|
+>| 4 |
+>| 0 | 1 | 1 | 0 |
+>| 1 | 0 | 1 | 1 |
+>| 1 | 1 | 0 | 0 |
+>| 0 | 1 | 0 | 0 |
+>
+>0
+>
+>𝑟 - A fonte da árvore do algoritmo de BFS
 # [2 - Kruskal](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Kruskal) 
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Kruskal/main.py) - Implementação do Kruskal
 >### Saída
@@ -80,5 +110,7 @@ o valor é o peso (positivo) da aresta.
 >| 1 | 0 | 1.5 | 2 |
 >| 2.5 | 1.5 | 0 | 0 |
 >| 0 | 2 | 0 | 0 |
+>
+>0
 >
 > 𝑟 - A raiz da árvore do algoritmo de Prim
