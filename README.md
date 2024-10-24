@@ -58,7 +58,7 @@ Implementação de diversos algoritmos pra grafos
 >0
 >
 >𝑟 - A fonte da árvore do algoritmo de BFS
-# [2 - Kruskal](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Kruskal) 
+# [3 - Kruskal](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Kruskal) 
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Kruskal/main.py) - Implementação do Kruskal
 >### Saída
 >
@@ -84,7 +84,7 @@ o valor é o peso (positivo) da aresta.
 >| 2.5 | 1.5 | 0 | 0 |
 >| 0 | 2 | 0 | 0 |
 
-# [3 - Prim](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Prim) 
+# [4 - Prim](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Prim) 
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Prim/main.py) - Implementação do Prim
 >### Saída
 > Retorna "VERDADEIRO" e em um array 𝑃 𝑖 de 𝑁 elementos com os predecessores de cada vértice, caso o grafo seja
