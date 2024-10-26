@@ -115,9 +115,7 @@ G = readFile()
 bipartite, oddCycles, parts = isBipartite(G)
 #Caso seja bipartido (Não possua ciclo ímpar)
 if(bipartite):
-    print("Sim, e suas partes são:")
-    print(f"Parte 1: {parts[0]}")
-    print(f"Parte 2: {parts[1]}")
+    print(f"Sim, e suas partes são: {parts[0]} e {parts[1]}")
 
 #Caso não seja bipartido (Possua ciclo ímpar)
 else:
