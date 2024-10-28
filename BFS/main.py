@@ -35,11 +35,8 @@ def bfs(G, r):
     Pi = [-1]*n;
     #Array que indica a distância de cada vértice para a raiz r
     d = [INFINITY]*n;
-    #Iniciamos a raiz como visitada já que partiremos dela
     state[r] = 1
-    #A distância da raiz para ela mesma é 0
     d[r] = 0;
-    #Predecessor da raiz vazio
     Pi[r] = -1;
     queue = [];
     #Primeiro vértice a ser observado será a raiz
@@ -48,21 +45,14 @@ def bfs(G, r):
     while queue != []:
         #Armazena a o vértice da posição inicial da fila
         u = queue.pop();
-        #Loop para cada vizinho de u
         for v in range(n):
-            #Se o vizinho ainda não foi visitado
             if(G[u][v] == 1 and state[v] == 0):
-                #Alteramos seu estado para visitado
                 state[v] = 1;
-                #Definimos o seu predecessor como u
                 Pi[v] = u;
-                #A sua distância para u é um nível maior que a distância de u para a raiz
                 d[v] = 1 + d[u];
-                #Agora iremos visitar o vértice v
+                #Adiciona o vértice v para ser visitado depois
                 queue.append(v);
-        #Após todos os vizinhos de u serem visitados alteramos seu estado para finalizado
         state[u] = 2;
-    #Retornamos os predecessores e as distâncias
     return Pi, d;
 
 G, r = readFile()

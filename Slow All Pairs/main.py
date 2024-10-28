@@ -17,7 +17,7 @@ def readFile():
     W = []
 
     for i in range(N):
-        w.append([])
+        W.append([])
         line = file.readline().split()
         for j in range(N):
             W[i].append(float(line[j]))
@@ -58,9 +58,7 @@ def extendShortestPaths(L, W, Pi):
                     print(f"L[{i}][{k}]: {L[i][k]} ; W[{k}][{j}]: {W[k][j]}")
                     #Se o caminho ik, kj for menor que o caminho ij
                     if(l[i][j] > sum(L[i][k], W[k][j])):
-                        #Atualizamos o caminho ij
                         l[i][j] = sum(L[i][k], W[k][j])
-                        #O novo predecessor do vértice j é o vértice intermediário k
                         Pi[i][j] = k+1
                     print("l:")
                     printMatrix(l)

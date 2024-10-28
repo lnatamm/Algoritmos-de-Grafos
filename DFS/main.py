@@ -24,32 +24,21 @@ def readFile():
 
 #Realiza a visita do vértice dentro do dfs
 def DFSvisit(u, discovery, finalization, time, d, Pi, state, root):
-    #Tamanho de G
     n = len(G)
-    #Altera o estado do vértice v para visitado
     state[u] = 1
-    #Incrementa o tempo atual
     time = time+1
-    #Define o tempo de descoberta do vértice v como o tempo atual
     discovery[u] = time
     #Loop para cada vizinho de v
     for v in range(n):
-        #Se o vértice ainda não foi visitado
         if(G[u][v] == 1 and state[v] == 0):
-            #A raiz de v é a mesma que a de u
             root[v] = root[u]
-            #A distância de v para a raiz é a distância de u + 1
             d[v] = [root[u], d[u][1] + 1]
-            #O predecessor de v é u
             Pi[v] = u
             #Atualiza os valores de todos os parametros e é feita a visitação do vértice v
             discovery, finalization, time, d, Pi, state, root = DFSvisit(v, discovery, finalization, time, d, Pi, state, root)
-    #Após todos os vizinhos de u terem sido visitados, finalizamos o vértice v
     state[u] = 2
     time = time + 1
-    #Define o tempo de finalização do vértice v como o tempo atual
     finalization[u] = time
-    #Retorna todos os parâmetros atualizados
     return discovery, finalization, time, d, Pi, state, root
 
 def DFS(G):
@@ -72,23 +61,16 @@ def DFS(G):
     
     #Loop para cada vértice u
     for u in range(n):
-        #Se o vértice ainda não foi visitado
         if state[u] == 0:
-            #A raiz do vértice u é ele mesmo
             root[u] = u
-            #A distância do vértice u para a raiz (ele mesmo) é 0
             d[u] = [root[u], 0]
             #Atualiza os valores de todos os atributos e é feita a visitação do vértice u
             discovery, finalization, time, d, Pi, state, root = DFSvisit(u, discovery, finalization, time, d, Pi, state, root)
 
-    #Retorna os tempos de descoberta, tempos de finalização, distâncias para as raízes, predecessores, estados e as raízes        
     return discovery, finalization, d, Pi, state, root
 
-#Lê o arquivo
 G = readFile()
-#Armazena as respostas
 discovery, finalization, d, Pi, state, root = DFS(G)
-#Printa os resultados
 print("Discovery:")
 print(discovery)
 print("Finalization:")

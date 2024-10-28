@@ -24,25 +24,18 @@ def readFile():
 
 #Realiza a visita do vértice dentro do dfs
 def dfsVisit(v, state, Pi, timeDiscovery, timeFinalization, time):
-    #Altera o estado do vértice v para visitado
     state[v] = 1
-    #Incrementa o tempo atual
     time = time + 1
-    #Define o tempo de descoberta do vértice v como o tempo atual
     timeDiscovery[v] = time
     #Loop para cada vizinho de v
     for i in range(len(G[v])):
         if(G[v][i] > 0):
-            #Se o vértice ainda não foi visitado
             if(state[i] == 0):
-                #Altera o predescessor do vértice para v
                 Pi[i] = v
                 #Agora visitamos o vértice i
                 state, Pi, timeDiscovery, timeFinalization, time = dfsVisit(i, state, Pi, timeDiscovery, timeFinalization, time)
-    #Após todos os vizinhos de v terem sido visitados, finalizamos o vértice v
     state[v] = 2
     time = time + 1
-    #Define o tempo de finalização do vértice v como o tempo atual
     timeFinalization[v] = time
     return state, Pi, timeDiscovery, timeFinalization, time
 
@@ -61,7 +54,6 @@ def dfs(G):
     time = 0
     #Loop para todos os vértices do grafo G
     for v in range(n):
-        #Se o vértice ainda não foi visitado, realizamos a visita dele
         if(state[v] == 0):
             state, Pi, timeDiscovery, timeFinalization, time = dfsVisit(v, state, Pi, timeDiscovery, timeFinalization, time)
     #Retornamos apenas o estado de cada vértice porque só estamos realizando o dfs para verificar se
@@ -88,12 +80,9 @@ def kruskal(G):
 
     #Adiciona o vértice v na árvore a qual o vértice u pertence
     def union(u, v):
-        #Guarda a raiz onde o vértice v será adicionado
         root = roots[u]
-        #Guarda a raiz do vértice v
         oldRoot = roots[v]
         for i in range(n):
-            #Altera a raiz do vértice v para a raiz do vértice u
             if(roots[i] == roots[oldRoot]):
                 roots[i] = root
 
@@ -113,7 +102,6 @@ def kruskal(G):
     for i in range(len(edges)):
         #Se a aresta ainda não pertence à árvore, ou seja, os vértices da aresta não possuem a mesma raiz
         if(find_set(edges[i][0]) != find_set(edges[i][1])):
-            #Adiciona essa aresta na lista de arestas da árvore geradora mínima
             minimumSpanningTree.append(edges[i])
             union(edges[i][0], edges[i][1])
 

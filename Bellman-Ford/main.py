@@ -28,17 +28,13 @@ def readFile():
 #Inicializa os arrays d e 𝑃i
 def initializeSingleSource(G, s):
     n = len(G)
-    #Dizemos que inicialmente a distância de cada vértice para a fonte é infinito
     d = [INFINITY]*n
-    #Inicializamos os predecessores como -1
     Pi = [-1]*n
-    #A distância da fonte é 0
     d[s] = 0
     return d, Pi
 
 #Método que permite a soma de 2 números funcione caso um deles seja infinito
 def sum(x, y):
-    #Caso algum dos elementos da soma seja infinito, o resultado dessa soma é infinito
     if(x == INFINITY or y == INFINITY):
         return INFINITY
     return x + y
@@ -47,9 +43,7 @@ def sum(x, y):
 def relax(d, Pi, u, v, G):
     #Se a distância atual de v para a fonte for maior que a soma entre a distância de u para a fonte com a aresta u,v
     if(d[v] > sum(d[u], G[u][v])):
-        #Atualizamos a distância de v para a fonte com essa soma
         d[v] = sum(d[u], G[u][v])
-        #Trocamos o seu predescessor para u
         Pi[v] = u
     return d, Pi
 
@@ -59,11 +53,8 @@ def bellmanFord(G, s):
     d, Pi = initializeSingleSource(G, s)
     #O algoritmo de Bellman-Ford necessita ser realizado N-1 vezes
     for i in range(n - 1):
-        #Loop para cada vértice
         for u in range(n):
-            #Loop para cada aresta
             for v in range(n):
-                #Se G[u][v] for maior que 0 significa que existe uma aresta conectando u e v
                 if(G[u][v] > 0):
                     #Relaxamos cada aresta do grafo
                     d, Pi = relax(d, Pi, u, v, G)

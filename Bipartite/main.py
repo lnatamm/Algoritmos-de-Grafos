@@ -24,9 +24,7 @@ def readFile():
 
 #Realiza a visita do vértice dentro do dfs
 def DFSvisit(u, Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart):
-    #Tamanho de G
     n = len(G)
-    #Altera o estado do vértice v para visitado
     state[u] = 1
     #Adiciona o vértice atual na parte atual (0 ou 1)
     parts[currentPart].append(u)
@@ -34,40 +32,28 @@ def DFSvisit(u, Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart):
     currentPart = (currentPart + 1) % 2
     #Loop para cada vizinho de v
     for v in range(n):
-        #Se o vértice u possui vizino v
         if(G[u][v] == 1):
-            #Se o vértice v ainda não foi visitado
             if(state[v] == 0):
-                #A raiz de v é a mesma que a de u
                 root[v] = root[u]
-                #O predecessor de v é u
                 Pi[v] = u
                 #Atualiza os valores de todos os parametros e é feita a visitação do vértice v
                 Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart = DFSvisit(v, Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart)
             #Caso o vértice v já tenha sido visitado, o vértice v não seja o próprio predecessor de u,
             #u e v possuem as mesmas raízes e v não é o próprio u, isso significa que o vértice v é o começo de um ciclo
             elif(state[v] == 1 and Pi[u] != v and root[v] == root[u] and u != v):
-                #Armazenamos o valor atual de u em current
                 current = u
-                #Adicionamos o vértice u (primeiro current) no ciclo
                 cycle[nCycles].append(current)
                 #Enquanto o current (atual) for diferente de v (o vértice inicial do ciclo)
                 while(current != v):
-                    #Atualizamos o current com o seu predecessor
                     current = Pi[current]
-                    #Adicionamos o current (o predecessor do atual) no ciclo
                     cycle[nCycles].append(current)
                 #Caso o ciclo seja ímpar
                 if(len(cycle[nCycles]) % 2 != 0):
                     #Adiciona o ciclo nos ciclos que tornam o grafo não bipartido
                     oddCycles.append(cycle[nCycles])
-                #Incrementamos o ciclo atual
                 nCycles = nCycles + 1
-                #Adicionamos uma lista vazia nos ciclos
                 cycle.append([])
-    #Após todos os vizinhos de u terem sido visitados, finalizamos o vértice v
     state[u] = 2
-    #Retorna todos os parâmetros atualizados
     return Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart
 
 def getOddCycles(G):
@@ -91,9 +77,7 @@ def getOddCycles(G):
     currentPart = 0
     #Loop para cada vértice u
     for u in range(n):
-        #Se o vértice ainda não foi visitado
         if state[u] == 0:
-            #A raiz do vértice u é ele mesmo
             root[u] = u
             #Atualiza os valores de todos os atributos e é feita a visitação do vértice u
             Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart = DFSvisit(u, Pi, state, root, cycle, nCycles, oddCycles, parts, currentPart)
@@ -101,7 +85,6 @@ def getOddCycles(G):
     #Inverte a ordem dos ciclos já que armazenamos eles em ordem contrária
     for i in range(len(oddCycles)):
         oddCycles[i].reverse()
-    #Retornamos os ciclos que tornam o grafo não bipartido e as suas partes
     return oddCycles, parts
 
 def isBipartite(G):
@@ -113,10 +96,7 @@ def isBipartite(G):
 G = readFile()
 
 bipartite, oddCycles, parts = isBipartite(G)
-#Caso seja bipartido (Não possua ciclo ímpar)
 if(bipartite):
     print(f"Sim, e suas partes são: {parts[0]} e {parts[1]}")
-
-#Caso não seja bipartido (Possua ciclo ímpar)
 else:
     print(f"Não, pois {oddCycles} formam ciclo ímpar")
