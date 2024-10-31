@@ -173,3 +173,32 @@ o valor é o peso (positivo) da aresta.
 >0
 >
 > 𝑟 - A raiz da árvore do algoritmo de Prim
+# [7 - Ford-Fulkerson](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Ford-Fulkerson)
+## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Ford-Fulkerson/main.py) - Implementação do Ford-Fulkerson
+>### Saída 
+>
+> 𝘧, uma matriz com o fluxo final de cada aresta do grafo
+>
+> totalFlux, um inteiro que indica o fluxo máximo que pode sair da fonte u
+## [ff.txt](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Ford-Fulkerson/ff.txt) - Arquivo de entrada do algoritmo
+> ### Entrada
+> 𝑁 - O número de vértices, que são nomeados de 0 a 𝑁 − 1
+>
+> A matriz de adjacência, com elementos separados por espaços  
+>- A matriz de adjacência recebe a capacidade de cada aresta ij.
+>
+> Exemplo:
+>
+>| | | | | | |
+>|---|---|---|---|---|---|
+>| 6 |
+>| 0 | 3 | 0 | 0 | 0 | 2 | 
+>| 0 | 0 | 2 | 0 | 0 | 0 |
+>| 0 | 1 | 0 | 1 | 0 | 0 |
+>| 0 | 0 | 5 | 0 | 4 | 0 |
+>| 0 | 0 | 0 | 3 | 0 | 2 |
+>| 3 | 0 | 0 | 0 | 4 | 0 |
+>
+>0 3
+>
+>𝘴, 𝘵 - A fonte o sumidouro, respectivamente.
