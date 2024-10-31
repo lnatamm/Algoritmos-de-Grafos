@@ -1,36 +1,7 @@
 # Algoritmos de Grafos
 Implementação de diversos algoritmos pra grafos
 
-# [1 - Bellman-Ford](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Bellman-Ford) 
-## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Bellman-Ford/main.py) - Implementação do Bellman-Ford
->### Saída 
->
-> 𝑃𝑖, um array de 𝑁 elementos com o predecessor de cada vértice
->
-> 𝑑, um array de 𝑁 elementos com as distâncias de cada vértice à fonte 𝑟
-## [bf.txt](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Bellman-Ford/bf.txt) - Arquivo de entrada do algoritmo
-> ### Entrada
-> 𝑁 - O número de vértices, que são nomeados de 0 a 𝑁 − 1
->
-> A matriz de adjacência, com elementos separados por espaços  
->- A matriz de adjacência tem entradas 0 na linha 𝑖 e coluna 𝑗 se não há arestas entre os vértices 𝑖 e 𝑗. Caso contrário,
->o valor é o peso (positivo) da aresta.
->
-> Exemplo:
->
->| | | | |
->|---|---|---|---|
->| 4 |
->| 0 | 1 | 2.5 | 0 |
->| 1 | 0 | 1.5 | 2 |
->| 2.5 | 1.5 | 0 | 0 |
->| 0 | 2 | 0 | 0 |
->
->0
->
->𝑟 - A fonte da árvore do algoritmo de Bellman-Ford
-
-# [2 - BFS (Breadth-First Search) ou Busca em Largura](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/BFS)
+# [1 - BFS (Breadth-First Search) ou Busca em Largura](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/BFS)
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/BFS/main.py) - Implementação do BFS
 >### Saída 
 >
@@ -58,7 +29,7 @@ Implementação de diversos algoritmos pra grafos
 >0
 >
 >𝑟 - A fonte da árvore do algoritmo de BFS
-# [3 - Bipartite](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Bipartite)
+# [2 - Bipartite](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Bipartite)
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Bipartite/main.py) - Implementação do BFS
 >### Saída 
 >
@@ -86,7 +57,7 @@ Implementação de diversos algoritmos pra grafos
 >| 1 | 0 | 1 | 1 |
 >| 1 | 1 | 0 | 0 |
 >| 0 | 1 | 0 | 0 |
-# [4 - DFS (Depth-First Search) ou Busca em profundidade](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Bipartite)
+# [3 - DFS (Depth-First Search) ou Busca em profundidade](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Bipartite)
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/DFS/main.py) - Implementação do DFS
 >### Saída 
 >discovery, um array de 𝑁 elementos com o tempo de descoberta de cada vértice
@@ -117,7 +88,7 @@ Implementação de diversos algoritmos pra grafos
 >| 1 | 0 | 1 | 1 |
 >| 1 | 1 | 0 | 0 |
 >| 0 | 1 | 0 | 0 |
-# [5 - Kruskal](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Kruskal) 
+# [4 - Kruskal](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Kruskal) 
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Kruskal/main.py) - Implementação do Kruskal
 >### Saída
 >
@@ -143,7 +114,7 @@ o valor é o peso (positivo) da aresta.
 >| 2.5 | 1.5 | 0 | 0 |
 >| 0 | 2 | 0 | 0 |
 
-# [6 - Prim](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Prim) 
+# [5 - Prim](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Prim) 
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Prim/main.py) - Implementação do Prim
 >### Saída
 > Retorna "VERDADEIRO" e em um array 𝑃 𝑖 de 𝑁 elementos com os predecessores de cada vértice, caso o grafo seja
@@ -173,7 +144,7 @@ o valor é o peso (positivo) da aresta.
 >0
 >
 > 𝑟 - A raiz da árvore do algoritmo de Prim
-# [7 - Ford-Fulkerson](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Ford-Fulkerson)
+# [6 - Ford-Fulkerson](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/Ford-Fulkerson)
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/Ford-Fulkerson/main.py) - Implementação do Ford-Fulkerson
 >### Saída 
 >
