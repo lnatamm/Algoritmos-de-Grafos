@@ -1,5 +1,5 @@
 # Algoritmos de Grafos
-Implementação de diversos algoritmos pra grafos
+Implementação de diversos algoritmos pra grafos. Todos os algoritmos foram desenvolvidos em Python durante a disciplina de Resolução de Problemas com Grafos
 
 # [1 - BFS (Breadth-First Search) ou Busca em Largura](https://github.com/lnatamm/Algoritmos-de-Grafos/tree/main/BFS)
 ## [main.py](https://github.com/lnatamm/Algoritmos-de-Grafos/blob/main/BFS/main.py) - Implementação do BFS
